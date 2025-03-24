@@ -22,4 +22,12 @@ jobs:
       - name: Lint
         run: pnpm lint
   
+      - name: Test
+        run: pnpm test
+ 
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
       
