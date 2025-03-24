@@ -26,8 +26,9 @@ jobs:
         run: pnpm test
  
       - name: Deploy
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: pnpm deploy
+        # uses: cloudflare/wrangler-action@v3
+        # with:
+        #   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
       
