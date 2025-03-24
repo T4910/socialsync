@@ -24,12 +24,13 @@ jobs:
   
       - name: Test
         run: pnpm test
+
+      - name: Build
+        run: pnpm build:cf
  
       - name: Deploy
-        run: pnpm deploy
-        # uses: cloudflare/wrangler-action@v3
-        # with:
-        #   apiToken: 
-          #{{ secrets.CLOUDFLARE_API_TOKEN }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
       
